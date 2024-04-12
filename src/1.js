@@ -35,9 +35,30 @@ webview.addEventListener('dom-ready', () => {
   `);
 })
 
+function highlightedSplit(type){
+    
+    if (type == '0'){
+        alert(1)
+        // document.getElementById("scr-1").style.border = "1px solid whitesmoke;"
+        // document.getElementById("scr-2").style.border = "1px solid black;"
+        return
+    }
+    if (type == '1'){
+        alert(2)
+        // document.getElementById("scr-2").style.border = "1px solid whitesmoke;"
+        // document.getElementById("scr-1").style.border = "1px solid black;"
+        return
+    }
+}
+
+
+document.getElementById("scr-1").addEventListener("click",() => {
+    alert("34")
+})
 
 
 function leftBarOpenTab(){
+  
     var left = document.getElementById("screen")
     left.style.width = 'calc(100vw - 56px - 2px)'
     document.getElementById("tab-bar").style.display = "flex"
@@ -70,4 +91,23 @@ function TopBarClose(){
     document.getElementById("nav-tab").style.display = "none"
 }
 
-// TopBarOpen()
+function SplitScreen(){
+    var type =  document.getElementById("split-ico").className
+    if (type == "off"){
+        document.getElementById("split-ico").src = "img/spliton.png"
+        document.getElementById("split-ico").className = "on"
+        document.getElementById("scr-1").style.width = "49.5%"
+        document.getElementById("scr-2").style.width = "49.5%"
+        document.getElementById("scr-2").style.display = "block"
+        return
+    }
+    if ( type == "on"){
+        document.getElementById("split-ico").src = "img/screensplit.png"
+        document.getElementById("split-ico").className = "off"
+        document.getElementById("scr-1").style.width = "100%"
+        document.getElementById("scr-2").style.width = "0%"
+        document.getElementById("scr-2").style.display = "none"
+        return
+    }
+}
+

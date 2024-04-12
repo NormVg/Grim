@@ -14,7 +14,7 @@
       <button onclick="alert('next')" ><img src="img/pagenext.png" ></button>
       <input id="url-bar" type="text" onmouseenter="heh()">
       <button onclick="alert('bookmark')" ><img src="img/pagebook.png" ></button>
-      <button onclick="alert('split')" ><img src="img/screensplit.png" ></button>
+      <button onclick="SplitScreen()" ><img id="split-ico" class="off" src="img/screensplit.png" ></button>
     </div>
     </section>
 
@@ -42,8 +42,9 @@
     </section>
   
     <section id="screen">
-      <section class="window"><webview src="https://www.google.com/"></webview></section>
-      <section class="window"><webview src="https://thenormvg.vercel.app/"></webview></section>
+      <section  class="window" id="scr-1" ><webview  id="ws-1" src="https://www.google.com/" allowpopups></webview></section>
+     
+      <section  class="window" id="scr-2" ><webview  id="ws-2" src="https://youtube.com/" allowpopups></webview></section>
     </section>
   </body>
 </html>

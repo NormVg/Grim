@@ -9,8 +9,7 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    
     webPreferences: {
       webviewTag: true,
       preload: path.join(__dirname, 'preload.js'),
@@ -18,7 +17,7 @@ const createWindow = () => {
     focusable:true,
     icon:path.join(__dirname, 'icon.png')    
   });
-  // mainWindow.setIcon = "icon.ico"
+  mainWindow.maximize()
   mainWindow.menuBarVisible = false
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 

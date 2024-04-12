@@ -19,7 +19,7 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: {
         options: {
-          icon: 'icon.png'
+          icon: '/home/vishnu/dev/scrap_code/Browser/Browser/icon.png'
         }
       },
     },
