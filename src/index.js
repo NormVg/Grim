@@ -16,11 +16,9 @@ const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
     focusable:true,
-
-
-    
+    icon:path.join(__dirname, 'icon.png')    
   });
-  mainWindow.setIcon = "icon.ico"
+  // mainWindow.setIcon = "icon.ico"
   mainWindow.menuBarVisible = false
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
