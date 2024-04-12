@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grim</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="1.js"></script>
+  </head>
+  <body>
+    <section onmouseenter=TopBarOpen() onmouseleave=TopBarClose() id="topbar">
+      <div id="nav-tab">
+      <button onclick="alert('back')"><img src="img/pageback.png" ></button>
+      <button onclick="alert('relode')"><img src="img/pagerelode.png" ></button>
+      <button onclick="alert('next')" ><img src="img/pagenext.png" ></button>
+      <input id="url-bar" type="text" onmouseenter="heh()">
+      <button onclick="alert('bookmark')" ><img src="img/pagebook.png" ></button>
+      <button onclick="alert('split')" ><img src="img/screensplit.png" ></button>
+    </div>
+    </section>
+
+    <section onmouseenter=leftBarOpenTab() onmouseleave=LeftBarClose() id="leftbar">
+      <div id="tab-bar">
+          <div class="tab"><button id="btn-add-tab" onclick="alert('add tab')"><img  src="img/addtab.png"></button></div>
+          <div class="tab"><button onclick="alert(1)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(2)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(3)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(4)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(5)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(6)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(7)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(8)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(9)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(0)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(11)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(12)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(13)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(14)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(15)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(16)" ><img  src="img/tabdefault.png"></button></div>
+          <div class="tab"><button onclick="alert(17)" ><img  src="img/tabdefault.png"></button></div>
+      </div>
+    </section>
+  
+    <section id="screen">
+      <section class="window"><webview src="https://www.google.com/"></webview></section>
+      <section class="window"><webview src="https://thenormvg.vercel.app/"></webview></section>
+    </section>
+  </body>
+</html>

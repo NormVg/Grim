@@ -1,0 +1,154 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  transition: 400ms all ease-in-out;
+}
+
+button{
+  background: none;
+  border: none;
+}
+
+body {
+  background-color: #0D0C0C;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+#screen{
+  width: calc(100vw - 26px) ;
+  height: calc(100vh - 26px);
+  max-width: calc(100vw - 26px) ;
+  max-height: calc(100vh - 26px);
+  background-color: #252525;
+  border-radius: 15px;
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+#leftbar{
+
+  /* background-color: black; */
+  height: calc(100vh - 5px);
+  width: 12px;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tab-bar{
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  width: 95%;
+  max-height: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.tab img{
+  width: 35px;
+}
+
+#topbar{
+  
+  /* background-color: black; */
+  width: calc(100vw - 13px);
+  height: 12px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-tab{
+  display:inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  min-width: 80vw;
+  gap: 10px;
+}
+
+#nav-tab input{
+  height: 30px;
+  min-width: 100px;
+  width: 50vw;
+  border: none;
+  background-color: #252525;
+  border-radius: 5px;
+  color: whitesmoke;
+  padding-left: 10px;
+  padding-right: 10px;
+
+
+  
+}
+
+#nav-tab button{
+  width: 30px;
+  height:30px;
+}
+
+#nav-tab img{
+  width: 30px;
+  
+}
+
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#tab-bar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.window{
+  width: 50%;
+  min-height: calc(100% - 10px );
+  /* max-height: calc(100% - 13px); */
+  
+  border-radius: 15px;
+  border:1px solid whitesmoke;
+  padding: 1px;
+  overflow: hidden;
+  
+}
+
+.window webview{
+  width: 100%;
+  height: 100%;
+
+  
+  
+}
+
+
+
+#tab-bar::-webkit-scrollbar {
+  display: none;
+}
