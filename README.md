@@ -8,6 +8,10 @@ i was looking through internet and i came to know about this new browser which c
 
  I was a windows use for too long and frustrated by default "WIN 11" ( cause it is shit ) which came with my new PC and that time i registered for Windows version or Arc, and GUESS!! what my "Win11"  got fried and i most of my data gone ( not the dev folder , _Cough_ _Cough_ I use GitHub for everything ),
  And Now "" *I USE LINUX BTW* "" fokes and few days back they send be invite for windows version of arc , and i am burned that they dont give WIN10 support and not even thinking on working for linux , **So i have to take the battle in my own hands** , and yaa i sated working on this the same day just for a *Proof of concept that i can make better and more useful things AND beautifully and with the feature which you will definitely use most of the days* 
+
+
+ https://github.com/NormVg/Grim/assets/87635928/49f7ed82-893f-4b54-81e1-d268e7136586
+ 
  ## Made with
  
 
