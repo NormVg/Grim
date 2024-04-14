@@ -1,2 +1,4 @@
-// See the Electron documentation for details on how to use preload scripts:
-// https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
+// preload.js
+window.addEventListener('DOMContentLoaded', () => {
+    // You can add some code to be executed in the webview context here
+});

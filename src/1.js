@@ -1,10 +1,12 @@
+
 document.getElementById("nav-tab").style.display = "none"
 document.getElementById("tab-bar").style.display = "none"
 
-const webview = document.querySelector('webview')
 
-webview.addEventListener('dom-ready', () => {
-  webview.insertCSS(`
+const WebView = document.querySelector('webview')
+
+WebView.addEventListener('dom-ready', () => {
+  WebView.insertCSS(`
   body:{
     border-radius:15px;
   }
@@ -35,26 +37,8 @@ webview.addEventListener('dom-ready', () => {
   `);
 })
 
-function highlightedSplit(type){
-    
-    if (type == '0'){
-        alert(1)
-        // document.getElementById("scr-1").style.border = "1px solid whitesmoke;"
-        // document.getElementById("scr-2").style.border = "1px solid black;"
-        return
-    }
-    if (type == '1'){
-        alert(2)
-        // document.getElementById("scr-2").style.border = "1px solid whitesmoke;"
-        // document.getElementById("scr-1").style.border = "1px solid black;"
-        return
-    }
-}
 
 
-document.getElementById("scr-1").addEventListener("click",() => {
-    alert("34")
-})
 
 
 function leftBarOpenTab(){
@@ -111,3 +95,20 @@ function SplitScreen(){
     }
 }
 
+
+
+WebView.addEventListener('new-window', (e) => {
+  alert(e.url);
+});
+
+function checkFocus() {
+  var active_win = document.activeElement.id
+  if (active_win == "ws-1"){
+    return
+  }
+  if (active_win == "ws-2"){
+    return
+  }
+}
+
+window.setInterval(checkFocus, 100); 

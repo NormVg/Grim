@@ -12,9 +12,12 @@ const createWindow = () => {
     
     webPreferences: {
       webviewTag: true,
+      contextIsolation: false,
+      nodeIntegration:true,
       preload: path.join(__dirname, 'preload.js'),
     },
     focusable:true,
+
     icon:path.join(__dirname, 'icon.png')    
   });
   mainWindow.maximize()
@@ -22,7 +25,9 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.openDevTools();
+
+
 };
 
 // This method will be called when Electron has finished
@@ -46,6 +51,16 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
+  }
+});
+
+
+
+app.on('web-contents-created', function (event, contents) {
+  if (contents.getType() === 'webview') {
+    contents.on('new-window', function (newWindowEvent) {
+      newWindowEvent.preventDefault();
+    });
   }
 });
 
