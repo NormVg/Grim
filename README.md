@@ -31,10 +31,11 @@ i was looking through internet and i came to know about this new browser which c
 
 yes this is simple
 
-https://github.com/NormVg/Grim/assets/87635928/49f7ed82-893f-4b54-81e1-d268e7136586
 
 ## TO BUID	
 
 	npm run make 
 
 again yes this is simple
+
+https://github.com/NormVg/Grim/assets/87635928/49f7ed82-893f-4b54-81e1-d268e7136586
