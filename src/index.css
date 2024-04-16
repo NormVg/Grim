@@ -102,7 +102,7 @@ body {
 
 
 
-#nav-tab img button input{
+#nav-tab *{
   -webkit-app-region: no-drag;
 }
 
@@ -113,7 +113,7 @@ body {
 #nav-tab{
   
 
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display:inline-flex;
   flex-direction: row;
   justify-content: center;
