@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel With Grim</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height:calc(100vh - 24px);
+            background-color: #252525;
+        }
+        img{
+            height: 25vh;
+        }
+        textarea{
+            resize: none;
+            border: none;
+            background-color: #0F0F0F;
+            min-width: 55vw;
+            border-radius: 5px;
+            color: whitesmoke;
+            min-height: 30px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: block;
+        }
+        textarea::placeholder{
+            color: grey;
+        }
+        textarea:focus { 
+        outline: none !important;
+        border-color: #719ECE;
+        box-shadow: 0 0 10px #719ECE;
+    }
+        
+    </style>
+</head>
+<body>
+    
+    <img src="../img/GrimHome.png" alt="">
+    <textarea  oninput="auto_grow(this)"  type="text" placeholder="Travell..." id="search"> </textarea>
+    
+    <script>
+
+var input = document.getElementById("search");
+
+
+input.addEventListener("keypress", function(event) {
+
+  if (event.key === "Enter") {
+
+    event.preventDefault();
+    var querry = document.getElementById("search").value
+    window.location.href = "https://www.google.com/search?q="+querry
+  }
+}); 
+
+
+
+function auto_grow(element) {
+  element.style.height = "5px";
+  element.style.height = (element.scrollHeight) + "px";
+}
+    </script>
+</body>
+</html>

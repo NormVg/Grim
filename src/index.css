@@ -27,7 +27,7 @@ body {
   height: calc(100vh - 26px);
   max-width: calc(100vw - 26px) ;
   max-height: calc(100vh - 26px);
-  background-color: #252525;
+  background-color: #0D0C0C;
   border-radius: 15px;
   position: fixed;
   right: 12px;
@@ -35,11 +35,12 @@ body {
   display: flex;
   flex-direction: row;
   gap: 5px;
-
+  transition: height 200ms ease-in-out;
+  /* transition: width 400ms ease-in-out; */
 }
 
 #leftbar{
-
+  border: rgba(255, 95, 95, 50);
   /* background-color: black; */
   height: calc(100vh - 5px);
   width: 12px;
@@ -108,12 +109,18 @@ body {
   border: none;
   background-color: #252525;
   border-radius: 5px;
-  color: whitesmoke;
+  color: rgb(182, 182, 182);
   padding-left: 10px;
   padding-right: 10px;
-
-
   
+}
+
+
+
+#nav-tab input:focus{
+  
+  color: whitesmoke;
+  outline: 1px solid #FF5F5F;
 }
 
 #nav-tab button{
