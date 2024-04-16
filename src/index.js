@@ -1,5 +1,5 @@
-const { app, BrowserWindow,ipcMain  } = require('electron');
-const { remote } = require('electron')
+const { app, BrowserWindow,ipcMain, ipcRenderer  } = require('electron');
+
 const path = require('node:path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -29,6 +29,23 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
   mainWindow.maximize()
   
+
+
+  
+
+
+  ipcMain.on("maxized",(event,data)=>{
+    mainWindow.addListener("maximize",()=> {
+      event.reply("maxized-reply","true")
+    })
+  })
+
+  ipcMain.on("unmaxized",(event,data)=>{
+    mainWindow.addListener("unmaximize",()=> {
+      event.reply("unmaxized-reply","true")
+    })
+  })
+
   ipcMain.on("max",(event,data)=>{
     
     if (mainWindow.isMaximized() == true){
@@ -45,15 +62,7 @@ const createWindow = () => {
     mainWindow.minimize()
   })
 
-  ipcMain.on("win-max-check",(event,data) => {
-    
-    if (mainWindow.isMaximized() == false){
-      event.reply("win-max-state","full")
-    }
-    else{
-      event.reply("win-max-state","no")
-    }
-  })
+  
 };
 
 ipcMain.on("close",(error,data)=>{

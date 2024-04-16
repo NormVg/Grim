@@ -1,11 +1,24 @@
 const { ipcRenderer } = require("electron")
-var LastWinState = "no"
-var WinMaxState = "no"
 
-ipcRenderer.on("win-max-state",(error,data)  => {
-  WinMaxState = data
+var AppWinState = "full"
+
+
+ipcRenderer.send("maxized",'true')
+ipcRenderer.send("unmaxized",'true')
+
+ipcRenderer.on("unmaxized-reply",(error,data) => {
+  TopBarOpen()
+  AppWinState = "no-full"
+  document.getElementById("nav-tab").className = "nav-tab-full"
+  ipcRenderer.send("maxized",'true')
 })
 
+ipcRenderer.on("maxized-reply",(error,data) => {
+  TopBarClose()
+  AppWinState = "full"
+  document.getElementById("nav-tab").className = ""
+  ipcRenderer.send("unmaxized",'true')
+})
 
 function CloseAPP() {
     
@@ -19,21 +32,3 @@ function minimizeApp() {
   ipcRenderer.send("mini", "true");
 }
 
-function UpdateWinState(){
-  ipcRenderer.send("win-max-check", "true");
-  if (WinMaxState ==  "full" && LastWinState == "no" ){
-    TopBarOpen()
-    document.getElementById("nav-tab").className = "nav-tab-full"
-    LastWinState = "full"
-  }
-  if (WinMaxState == "no" && LastWinState == "full"){
-    document.getElementById("nav-tab").className = ""
-    TopBarClose()
-    LastWinState = "no"
-  }
-
-
-
-}
-
-window.setInterval(UpdateWinState, 205); 

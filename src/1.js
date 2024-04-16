@@ -75,15 +75,17 @@ async function LeftBarClose(){
 }
 
 function TopBarClose(){
-  if (WinMaxState == "no"){
-
-    var left = document.getElementById("screen")
-    left.style.height = 'calc(100vh - 26px)'
+  
+    if (AppWinState == "full"){
+      var left = document.getElementById("screen")
+      left.style.height = 'calc(100vh - 26px)'
+      
+      document.getElementById('topbar').style.height = "12px"
+      document.getElementById("nav-tab").style.display = "none"
+      document.getElementById('nav-tab').className = ""  
+    }
     
-    document.getElementById('topbar').style.height = "12px"
-    document.getElementById("nav-tab").style.display = "none"
-    document.getElementById('nav-tab').className = ""
-  }
+  
     
 }
 
