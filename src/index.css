@@ -126,7 +126,7 @@ body {
 #nav-tab{
   
 
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display:inline-flex;
   flex-direction: row;
   justify-content: center;
