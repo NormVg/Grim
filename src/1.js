@@ -8,6 +8,7 @@ document.getElementById("tab-bar").style.display = "none"
 
 
 
+
 const WebView = document.querySelector('webview')
 
 WebView.addEventListener('dom-ready', () => {
@@ -60,6 +61,7 @@ function TopBarOpen(){
     
     document.getElementById('topbar').style.height = "calc(45px - 12px)"
     document.getElementById("nav-tab").style.display = "flex"
+    document.getElementById('topbar').className = "topbar-drag"
 }
 
 
@@ -73,11 +75,16 @@ async function LeftBarClose(){
 }
 
 function TopBarClose(){
+  if (WinMaxState == "no"){
+
     var left = document.getElementById("screen")
     left.style.height = 'calc(100vh - 26px)'
     
     document.getElementById('topbar').style.height = "12px"
     document.getElementById("nav-tab").style.display = "none"
+    document.getElementById('nav-tab').className = ""
+  }
+    
 }
 
 function SplitScreen(){
@@ -120,39 +127,66 @@ function AddTabs(){
 
 
 function BackWeb() {
+  
   document.getElementById(active_screen_win).goBack()
 }
 
 function NextWeb(){
+  
   document.getElementById(active_screen_win).goForward()
 }
 
 function ReloadWeb(){
+  
   document.getElementById(active_screen_win).reload()
 }
 
 function checkFocus() {
-  UpdateURLWeb()
+  
   var active_win = document.activeElement.id
   if (active_win == "ws-1"){
     active_screen_win = "ws-1"
     document.getElementById("scr-1").style.border =  "1px solid rgba(255, 95, 95, 50%)"
     document.getElementById("scr-2").style.border =  "1px solid black"
-    document.getElementById("url-bar").value = scr_1_weburl
+    
     return
   }
   if (active_win == "ws-2"){
     active_screen_win = "ws-2"
     document.getElementById("scr-2").style.border =  "1px solid rgba(255, 95, 95, 50%)"
     document.getElementById("scr-1").style.border =  "1px solid black"
-    document.getElementById("url-bar").value = scr_2_weburl
+    
     return
   }
 }
 
 window.setInterval(checkFocus, 100); 
 
-function UpdateURLWeb () {
-  scr_1_weburl = document.getElementById("ws-1").getURL()
-  scr_2_weburl = document.getElementById("ws-2").getURL()
+function UpdateURLWebSetter () {
+  if ( document.getElementById("ws-1").getURL().includes("homegrimapppage.html") ){
+    scr_1_weburl = ""
+  }else{
+    scr_1_weburl = document.getElementById("ws-1").getURL()
+  }
+
+  if ( document.getElementById("ws-2").getURL().includes("homegrimapppage.html") ){
+    scr_2_weburl = ""
+  }else{
+    scr_2_weburl = document.getElementById("ws-2").getURL()
+  }
+  
 }
+
+function UpdateURLWeb(){
+  UpdateURLWebSetter()
+  if (active_screen_win == "ws-1"){
+    document.getElementById("url-bar").value = scr_1_weburl
+    return
+  }
+  if (active_screen_win == "ws-2"){
+    document.getElementById("url-bar").value = scr_2_weburl
+    return
+  }
+}
+
+window.setInterval(UpdateURLWeb, 101); 

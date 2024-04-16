@@ -5,8 +5,10 @@
     <title>Grim</title>
     <link rel="stylesheet" href="index.css" />
     <script defer src="1.js"></script>
+    <script defer src="2.js"></script>
   </head>
   <body>
+    
     <section onmouseenter=TopBarOpen() onmouseleave=TopBarClose() id="topbar">
       <div id="nav-tab">
       <button onclick="BackWeb()"><img src="img/pageback.png" ></button>
@@ -15,6 +17,11 @@
       <input id="url-bar" type="text" >
       <button onclick="alert('bookmark')" ><img src="img/pagebook.png" ></button>
       <button onclick="SplitScreen()" ><img id="split-ico" class="off" src="img/screensplit.png" ></button>
+        <div id="win-tray">
+          <button onclick="minimizeApp()"><img src="img/backmini.png" ></button>
+          <button onclick="maximizeApp()"><img src="img/backmax.png" ></button>
+          <button onclick="CloseAPP()"><img src="img/backwin.png" ></button>
+        </div>
     </div>
     </section>
 
@@ -26,9 +33,10 @@
     </section>
   
     <section id="screen">
-      <section class="window" id="scr-1" ><webview  id="ws-1" src="components/home.html" allowpopups  ></webview></section>
+      <section class="window" id="scr-1" ><webview  id="ws-1" src="components/homegrimapppage.html" allowpopups  ></webview></section>
      
-      <section  class="window" id="scr-2" ><webview onclick="alert('123')" id="ws-2" src="components/home.html" ></webview></section>
+      <section  class="window" id="scr-2" ><webview onclick="alert('123')" id="ws-2" src="components/homegrimapppage.html" ></webview></section>
     </section>
+
   </body>
 </html>

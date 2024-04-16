@@ -7,6 +7,10 @@
 button{
   background: none;
   border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -18,6 +22,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  user-select: none; 
   
   
 }
@@ -36,7 +42,7 @@ body {
   flex-direction: row;
   gap: 5px;
   transition: height 200ms ease-in-out;
-  /* transition: width 400ms ease-in-out; */
+  
 }
 
 #leftbar{
@@ -77,6 +83,7 @@ body {
 #topbar{
   
   
+  
   width: calc(100vw - 13px);
   height: 12px;
   position: absolute;
@@ -89,18 +96,39 @@ body {
   transition: all 200ms ease-in-out;
 }
 
+
+
+
+
+
+
+#nav-tab img button input{
+  -webkit-app-region: no-drag;
+}
+
+.nav-tab-full{
+  -webkit-app-region: drag;
+}
+
 #nav-tab{
+  
+
+  border: 1px solid white;
   display:inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   
   min-width: 80vw;
+  width: 100%;
   gap: 10px;
   
   transition: all 200ms ease-in-out;
+  
 
 }
+
+
 
 #nav-tab input{
   height: 30px;
@@ -170,4 +198,38 @@ body {
 
 #tab-bar::-webkit-scrollbar {
   display: none;
+}
+
+#win-tray{
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 0%;
+  margin-right: 10px;
+  
+  
+  /* -webkit-user-select: none; */
+  /* -webkit-app-region: drag; */
+  -webkit-app-region: no-drag;
+}
+
+#win-tray button{
+  padding: 0;
+  margin: -3px;
+
+}
+
+#win-tray img{
+  width: 18px;
+  margin: 0%;
+  padding: 0%;
+  
+
+}
+
+#win-tray button img:hover{
+  box-shadow: 0 0 10px #719ECE;
+  border-radius: 100%;
 }

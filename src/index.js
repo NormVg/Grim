@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow,ipcMain  } = require('electron');
+const { remote } = require('electron')
 const path = require('node:path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -15,20 +16,54 @@ const createWindow = () => {
       contextIsolation: false,
       nodeIntegration:true,
       preload: path.join(__dirname, 'preload.js'),
+
     },
     focusable:true,
-
-    icon:path.join(__dirname, 'icon.png')    
+    icon:path.join(__dirname, 'icon.png'),
+    titleBarStyle: 'hidden',
+    transparent: true,
+    frame:false
   });
-  mainWindow.maximize()
+  // mainWindow.maximize()
   mainWindow.menuBarVisible = false
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.maximize()
+  
+  ipcMain.on("max",(event,data)=>{
+    
+    if (mainWindow.isMaximized() == true){
+      mainWindow.unmaximize()
+    }
+    else{
+      mainWindow.maximize()
+    }
+   
+  })
 
-  // Open the DevTools.
-  // mainWindow.openDevTools();
+  ipcMain.on("mini",(event,data)=>{
+    console.log("mini")
+    mainWindow.minimize()
+  })
 
-
+  ipcMain.on("win-max-check",(event,data) => {
+    
+    if (mainWindow.isMaximized() == false){
+      event.reply("win-max-state","full")
+    }
+    else{
+      event.reply("win-max-state","no")
+    }
+  })
 };
+
+ipcMain.on("close",(error,data)=>{
+  app.quit()
+ 
+})
+
+
+
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
