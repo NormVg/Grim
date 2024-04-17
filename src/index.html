@@ -15,7 +15,7 @@
       <button onclick="ReloadWeb()"><img src="img/pagerelode.png" ></button>
       <button onclick="NextWeb()" ><img src="img/pagenext.png" ></button>
       <input id="url-bar" type="text" >
-      <button onclick="alert('bookmark')" ><img src="img/pagebook.png" ></button>
+      <button onclick="confirm('bookmark')" ><img src="img/pagebook.png" ></button>
       <button onclick="SplitScreen()" ><img id="split-ico" class="off" src="img/screensplit.png" ></button>
         <div id="win-tray">
           <button onclick="minimizeApp()"><img src="img/backmini.png" ></button>
@@ -35,7 +35,7 @@
     <section id="screen">
       <section class="window" id="scr-1" ><webview  id="ws-1" src="components/homegrimapppage.html" allowpopups  ></webview></section>
      
-      <section  class="window" id="scr-2" ><webview onclick="alert('123')" id="ws-2" src="components/homegrimapppage.html" ></webview></section>
+      <section  class="window" id="scr-2" ><webview id="ws-2" src="components/homegrimapppage.html" allowpopups  ></webview></section>
     </section>
   </div>
   </body>

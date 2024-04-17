@@ -113,9 +113,7 @@ function SplitScreen(){
 
 
 
-WebView.addEventListener('new-window', (e) => {
-  alert(e.url);
-});
+
 
 
 function AddTabs(){
@@ -148,6 +146,7 @@ function checkFocus() {
   var active_win = document.activeElement.id
   if (active_win == "ws-1"){
     active_screen_win = "ws-1"
+    updateURLgg()
     document.getElementById("scr-1").style.border =  "1px solid rgba(255, 95, 95, 50%)"
     document.getElementById("scr-2").style.border =  "1px solid black"
     
@@ -155,6 +154,7 @@ function checkFocus() {
   }
   if (active_win == "ws-2"){
     active_screen_win = "ws-2"
+    updateURLgg()
     document.getElementById("scr-2").style.border =  "1px solid rgba(255, 95, 95, 50%)"
     document.getElementById("scr-1").style.border =  "1px solid black"
     
@@ -164,31 +164,25 @@ function checkFocus() {
 
 window.setInterval(checkFocus, 100); 
 
-function UpdateURLWebSetter () {
-  if ( document.getElementById("ws-1").getURL().includes("homegrimapppage.html") ){
-    scr_1_weburl = ""
-  }else{
-    scr_1_weburl = document.getElementById("ws-1").getURL()
-  }
 
-  if ( document.getElementById("ws-2").getURL().includes("homegrimapppage.html") ){
-    scr_2_weburl = ""
-  }else{
-    scr_2_weburl = document.getElementById("ws-2").getURL()
-  }
-  
-}
 
-function UpdateURLWeb(){
-  UpdateURLWebSetter()
-  if (active_screen_win == "ws-1"){
-    document.getElementById("url-bar").value = scr_1_weburl
-    return
-  }
-  if (active_screen_win == "ws-2"){
-    document.getElementById("url-bar").value = scr_2_weburl
-    return
-  }
-}
+document.getElementById("url-bar").addEventListener("keypress", function(event) {
 
-window.setInterval(UpdateURLWeb, 101); 
+  if (event.key === "Enter") {
+
+    event.preventDefault();
+    var querry = String( document.getElementById("url-bar").value)
+    if (querry.startsWith("http://")){
+      document.getElementById(active_screen_win).src = querry
+      return
+    }
+    if (querry.startsWith("https://")){
+      document.getElementById(active_screen_win).src = querry
+      return
+    }
+    else{
+      document.getElementById(active_screen_win).src = "https://www.google.com/search?q="+querry
+      return
+    }
+  }
+}); 

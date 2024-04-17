@@ -25,12 +25,12 @@
 
             border-radius: 5px;
             color: whitesmoke;
-            height: 10px;
+            min-height: 5px;
             
-            padding-top: 10px;
+            padding-top: 15px;
             padding-left: 10px;
             padding-right: 10px;
-            /* display: block; */
+            display: block;
         
             text-align: left;
             
@@ -49,7 +49,7 @@
 <body>
     
     <img src="../img/GrimHome.png" alt="">
-    <textarea   type="text" placeholder="Travell..." id="search"> </textarea>
+    <textarea   type="text" placeholder="Travell..." id="search" ></textarea>
     
     <script>
 
@@ -71,6 +71,7 @@ input.addEventListener("keypress", function(event) {
 const tx = document.getElementsByTagName("textarea");
 for (let i = 0; i < tx.length; i++) {
   tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+  tx[i].setAttribute("style", "max-height:" + (tx[i].scrollHeight) + "px");
   tx[i].addEventListener("input", OnInput, false);
 }
 

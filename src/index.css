@@ -1,7 +1,11 @@
 *{
   padding: 0%;
   margin: 0%;
-  /* transition: 400ms all ease-in-out; */
+
+}
+
+img {
+  -webkit-user-drag: none;
 }
 
 button{
@@ -60,7 +64,7 @@ body {
 
 #leftbar{
   border: rgba(255, 95, 95, 50);
-  /* background-color: black; */
+  
   height: calc(100vh - 5px);
   width: 12px;
   position: absolute;
@@ -68,11 +72,12 @@ body {
   bottom: 0%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   transition: all 200ms ease-in-out;
 }
 
 #tab-bar{
+
   border: 1px solid whitesmoke;
   border-radius: 5px;
   width: 95%;
@@ -86,6 +91,10 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   
+  margin-top: 80px;
+  margin-left: 5px;
+  gap: 7px;
+
   transition: all 200ms ease-in-out;
 }
 
@@ -126,7 +135,7 @@ body {
 #nav-tab{
   
 
-  /* border: 1px solid white; */
+  
   display:inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -167,6 +176,14 @@ body {
 #nav-tab button{
   width: 30px;
   height:30px;
+  
+  
+  
+}
+
+#nav-tab button img:active {
+  border: 1px solid #FF5F5F;
+  border-radius: 5px;
 }
 
 #nav-tab img{
@@ -245,4 +262,8 @@ body {
 #win-tray button img:hover{
   box-shadow: 0 0 10px #719ECE;
   border-radius: 100%;
+}
+
+#win-tray button img:active{
+border: none;
 }

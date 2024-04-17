@@ -32,3 +32,67 @@ function minimizeApp() {
   ipcRenderer.send("mini", "true");
 }
 
+function updateURLgg(){
+  if (active_screen_win == "ws-1"){
+    if (!(document.getElementById("url-bar").value == scr_1_weburl)){
+      document.getElementById("url-bar").value = scr_1_weburl
+    }
+  }else{
+    if (!(document.getElementById("url-bar").value == scr_2_weburl)){
+      document.getElementById("url-bar").value = scr_2_weburl
+    }
+  }
+  }
+
+
+document.getElementById("ws-1").addEventListener("did-navigate", (e) => {
+  
+  
+  
+  if (!(e.url.includes("homegrimapppage.html") )){
+    scr_1_weburl = e.url
+    console.log(e.url)
+    
+  }
+  else{
+    scr_1_weburl = ""
+  }
+  updateURLgg()
+});
+
+document.getElementById("ws-2").addEventListener("did-navigate", (e) => {
+  if (!(e.url.includes("homegrimapppage.html") )){
+    scr_2_weburl = e.url
+  }
+  else{
+    scr_2_weburl = ""
+  }
+  updateURLgg()
+});
+
+
+
+document.getElementById("ws-1").addEventListener("did-navigate-in-page", (e) => {
+  
+  
+  
+  if (!(e.url.includes("homegrimapppage.html") )){
+    scr_1_weburl = e.url
+    console.log(e.url)
+    
+  }
+  else{
+    scr_1_weburl = ""
+  }
+  updateURLgg()
+});
+
+document.getElementById("ws-2").addEventListener("did-navigate-in-page", (e) => {
+  if (!(e.url.includes("homegrimapppage.html") )){
+    scr_2_weburl = e.url
+  }
+  else{
+    scr_2_weburl = ""
+  }
+  updateURLgg()
+});

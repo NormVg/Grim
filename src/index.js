@@ -28,10 +28,11 @@ const createWindow = () => {
   mainWindow.menuBarVisible = false
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
   mainWindow.maximize()
-  
+  mainWindow.webContents.openDevTools()
 
-
-  
+  mainWindow.webContents.on("did-create-window",()=>{
+    console.log("adsasd")
+  })
 
 
   ipcMain.on("maxized",(event,data)=>{
@@ -70,13 +71,28 @@ ipcMain.on("close",(error,data)=>{
  
 })
 
+app.on('web-contents-created', (en, contents) => {
 
+  if (contents.getType() == 'webview') {
 
+    contents.setWindowOpenHandler((handler) => {
+      console.log(handler)
+      return {action : "deny"}; 
+  });
+
+    // contents.on('did-create-window', (e, url) => {
+
+    //   // shell.openExternal(url)
+    // })
+  }
+})
 
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
+
+
 app.whenReady().then(() => {
   createWindow();
 
