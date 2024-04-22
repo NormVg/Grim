@@ -19,6 +19,14 @@ i was looking through internet and i came to know about this new browser which c
  - vanilaJS (Cause I have learned js eyes on you react dev)
  - and yes there is nothing more CAUSE I AM CHAD I WRITE MY OWN CSS HAAA HAAA ...
 
+## what's working in there
+- [] tabs
+- [x] home
+- [x] navigation
+- [x] split screen
+- [x] url bar
+ 
+
 ## How to use 
 
     git clone https://github.com/NormVg/Grim
