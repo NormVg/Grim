@@ -20,7 +20,7 @@ i was looking through internet and i came to know about this new browser which c
  - and yes there is nothing more CAUSE I AM CHAD I WRITE MY OWN CSS HAAA HAAA ...
 
 ## what's working in there
-- [] tabs
+- [ ] tabs
 - [x] home
 - [x] navigation
 - [x] split screen
