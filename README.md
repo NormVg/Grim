@@ -1,4 +1,8 @@
 # Grim.Vex / Grim 
+
+> [!WARNING]  
+> So! i have got a new idea for this app and its pretty cool taking this in differet direction
+
 ## Arc Browser is Shit , I ~~made~~ making my own
 
 
