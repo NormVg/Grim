@@ -5,8 +5,6 @@
 
 ## Arc Browser is Shit , I ~~made~~ making my own
 
-[url=https://ibb.co/7CQhmB0][img]https://i.ibb.co/kBJZCzP/Home-3.png[/img][/url]
-[url=https://imgbb.com/]how to share pictures online for free[/url]
 
 ## why?
 i was looking through internet and i came to know about this new browser which came to replace LORD "Chrome" and i dig deeper and got to know about the team and what is the "core" idea of it , (  Arc was new at that time just started its development ) and I FUCKING LOVED IT, but as the time passes i started to feel that they are ruining the concept of arc and pushing too many features which certainly no one will even use after ones ( just after installing arc) and forget about it. and at that time  _Cough_ _Cough_ ""i thought i can do it better"" and i fairly working on UI design and left and never made it cause i was too packed with work.
